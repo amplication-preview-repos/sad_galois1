@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+                 package database;
+service DatabaseService {
+ rpc createDatabase (DatabaseCreateInput) returns (Database) {}
+rpc databases (findManyParams) returns (stream Database) {}
+rpc database (DatabaseWhereUniqueInput) returns (Database) {}
+rpc updateDatabase (DatabaseUpdateInput) returns (Database) {}
+rpc deleteDatabase (DatabaseWhereUniqueInput) returns (Database) {} 
+ }
+message DatabaseCreateInput {
+string id = 1;
+string createdAt = 2;
+string updatedAt = 3;
+};
+message Database {
+string id = 1;
+string createdAt = 2;
+string updatedAt = 3;
+};
+message DatabaseWhereUniqueInput {
+string id = 1;
+string createdAt = 2;
+string updatedAt = 3;
+};
+message DatabaseUpdateInput {
+string id = 1;
+string createdAt = 2;
+string updatedAt = 3;
+};
+message findManyParams {
+
+};
