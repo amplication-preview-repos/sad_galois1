@@ -1,0 +1,17 @@
+import * as common from "@nestjs/common";
+import * as swagger from "@nestjs/swagger";
+import * as nestAccessControl from "nest-access-control";
+import { QueryService } from "./query.service";
+import { QueryControllerBase } from "./base/query.controller.base";
+
+@swagger.ApiTags("queries")
+@common.Controller("queries")
+export class QueryController extends QueryControllerBase {
+  constructor(
+    protected readonly service: QueryService,
+    @nestAccessControl.InjectRolesBuilder()
+    protected readonly rolesBuilder: nestAccessControl.RolesBuilder
+  ) {
+    super(service, rolesBuilder);
+  }
+}

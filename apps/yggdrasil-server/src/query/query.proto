@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+                 package query;
+service QueryService {
+ rpc createQuery (QueryCreateInput) returns (Query) {}
+rpc queries (findManyParams) returns (stream Query) {}
+rpc query (QueryWhereUniqueInput) returns (Query) {}
+rpc updateQuery (QueryUpdateInput) returns (Query) {}
+rpc deleteQuery (QueryWhereUniqueInput) returns (Query) {} 
+ }
+message QueryCreateInput {
+string id = 1;
+string createdAt = 2;
+string updatedAt = 3;
+};
+message Query {
+string id = 1;
+string createdAt = 2;
+string updatedAt = 3;
+};
+message QueryWhereUniqueInput {
+string id = 1;
+string createdAt = 2;
+string updatedAt = 3;
+};
+message QueryUpdateInput {
+string id = 1;
+string createdAt = 2;
+string updatedAt = 3;
+};
+message findManyParams {
+
+};

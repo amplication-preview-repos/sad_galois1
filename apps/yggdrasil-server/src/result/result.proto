@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+                 package result;
+service ResultService {
+ rpc createResult (ResultCreateInput) returns (Result) {}
+rpc results (findManyParams) returns (stream Result) {}
+rpc result (ResultWhereUniqueInput) returns (Result) {}
+rpc updateResult (ResultUpdateInput) returns (Result) {}
+rpc deleteResult (ResultWhereUniqueInput) returns (Result) {} 
+ }
+message ResultCreateInput {
+string id = 1;
+string createdAt = 2;
+string updatedAt = 3;
+};
+message Result {
+string id = 1;
+string createdAt = 2;
+string updatedAt = 3;
+};
+message ResultWhereUniqueInput {
+string id = 1;
+string createdAt = 2;
+string updatedAt = 3;
+};
+message ResultUpdateInput {
+string id = 1;
+string createdAt = 2;
+string updatedAt = 3;
+};
+message findManyParams {
+
+};
